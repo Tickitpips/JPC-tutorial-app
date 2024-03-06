@@ -43,8 +43,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DisplayArticle(){
+//The DisplayArticle function calls the tutorial screen function with the following resources as parameters
     TutorialScreen(
-        title = stringResource(R.string.title_jpc_tutorial),
+        title = stringResource(R.string.title_jpc_tutorial), //here, I created string resources
         jpcDef = stringResource(R.string.jpc_definition),
         tutBody = stringResource(R.string.tutorial_body),
         imagePainter = painterResource(R.drawable.bg_compose_background)
@@ -53,12 +54,14 @@ fun DisplayArticle(){
 
 @Composable
 private fun TutorialScreen(
+    //Definition of variables as passed in the TutorialScreen function above
     title: String,
     jpcDef: String,
     tutBody: String,
     imagePainter: Painter,
     modifier: Modifier = Modifier,
 ){
+    //Create a column to display the image and texts
     Column(modifier = modifier){
         Image(painter = imagePainter, contentDescription = null)
         Text(
